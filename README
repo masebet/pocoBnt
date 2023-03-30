@@ -1,0 +1,25 @@
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
+apt update -y
+apt install build-essential
+apt install -y libpoco-dev
+git clone https://github.com/masebet/pocoBnt.git
+
+touch /etc/systemd/system/http.service
+nano /etc/systemd/system/http.service
+
+[Unit]
+Description=Program Ebet
+
+[Service]
+ExecStart=/root/pocoBnt/a
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl daemon-reload
+systemctl enable http.service
+
+string a = "/root/pocoBnt"+request.getURI();
+if(a=="/root/pocoBnt/")a="/root/pocoBnt/index.html";
+
+reboot
