@@ -22,4 +22,8 @@ systemctl enable http.service
 string a = "/root/pocoBnt"+request.getURI();
 if(a=="/root/pocoBnt/")a="/root/pocoBnt/index.html";
 
+
+Certificate is saved at: /etc/letsencrypt/live/bnt-group.co.id/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/bnt-group.co.id/privkey.pem
+/etc/letsencrypt/archive/bnt-group.co.id/
 reboot
