@@ -1,8 +1,25 @@
+PIN 1 =  VCC
+PIN 2 = WIRE TOP + WARNA ORANGE
+PIN 3 = WIRE TOP + ION + WARNA BIRU
+PIN 4 = WIRE TOP + BUTTON
+PIN 5 =  A5SHB (misfit p canel)
+PIN 6 =  KIPAS
+PIN 7 = OZON
+PIN 8 = GND
+
+
+scp -r pocoBnt ssh root@103.190.28.108:/root
+
+sudo nc -nvlp 777
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
 apt update -y
 apt install build-essential
-apt install -y libpoco-dev
+apt install libpoco-dev
+apt install git
+apt install nodejs npm
+
 git clone https://github.com/masebet/pocoBnt.git
+git clone https://github.com/masebet/chatApp.git
 
 touch /etc/systemd/system/http.service
 nano /etc/systemd/system/http.service
@@ -16,14 +33,58 @@ ExecStart=/root/pocoBnt/a
 [Install]
 WantedBy=multi-user.target
 
+touch /etc/systemd/system/chat.service
+nano /etc/systemd/system/chat.service
+
+
+[Unit]
+Description=Program Ebet dua
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/node /root/chatApp/app.js
+WorkingDirectory=/root/chatApp
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
 systemctl daemon-reload
 systemctl enable http.service
+systemctl enable chat.service
 
 string a = "/root/pocoBnt"+request.getURI();
 if(a=="/root/pocoBnt/")a="/root/pocoBnt/index.html";
 
-
-Certificate is saved at: /etc/letsencrypt/live/bnt-group.co.id/fullchain.pem
-Key is saved at:         /etc/letsencrypt/live/bnt-group.co.id/privkey.pem
-/etc/letsencrypt/archive/bnt-group.co.id/
 reboot
+
+
+websocet listener 
+
+git remote set-url origin https://
+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@github.com/masebet/pocoBnt.git
+
+git clone -b master https://github.com/pocoproject/poco.git
+./configure --omit=NetSSL_OpenSSL,Crypto,Data/ODBC,Data/MySQL,Data/PostgreSQL
+make -s -j4
+sudo make install
+
+https://www.freepik.com/free-photos-vectors/slavic-woman
+
+csrutil disable
+sudo spctl –master-disable
+
+
+    ./b2
+     ./b2 headers
+
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - B2 documentation:
+     http://www.boost.org/build/
