@@ -1,13 +1,3 @@
-PIN 1 =  VCC
-PIN 2 = WIRE TOP + WARNA ORANGE
-PIN 3 = WIRE TOP + ION + WARNA BIRU
-PIN 4 = WIRE TOP + BUTTON
-PIN 5 =  A5SHB (misfit p canel)
-PIN 6 =  KIPAS
-PIN 7 = OZON
-PIN 8 = GND
-
-
 scp -r pocoBnt ssh root@103.190.28.108:/root
 
 sudo nc -nvlp 777
@@ -57,34 +47,12 @@ systemctl enable chat.service
 string a = "/root/pocoBnt"+request.getURI();
 if(a=="/root/pocoBnt/")a="/root/pocoBnt/index.html";
 
-reboot
-
-
-websocet listener 
-
-git remote set-url origin https://
-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@github.com/masebet/pocoBnt.git
-
 git clone -b master https://github.com/pocoproject/poco.git
 ./configure --omit=NetSSL_OpenSSL,Crypto,Data/ODBC,Data/MySQL,Data/PostgreSQL
 make -s -j4
 sudo make install
 
-https://www.freepik.com/free-photos-vectors/slavic-woman
-
 csrutil disable
 sudo spctl –master-disable
 
 
-    ./b2
-     ./b2 headers
-
-
-   - Command line help:
-     ./b2 --help
-     
-   - Getting started guide: 
-     http://www.boost.org/more/getting_started/unix-variants.html
-     
-   - B2 documentation:
-     http://www.boost.org/build/
